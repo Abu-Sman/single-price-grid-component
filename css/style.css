@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media screen and (min-width: 150em) {
+  html {
+    font-size: 85%;
+  }
+}
+@media screen and (min-width: 90em) {
+  html {
+    font-size: 70%;
+  }
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: rgba(152, 166, 189, 0.3);
+  padding: 6rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 150em) {
+  .container {
+    min-height: 80vh;
+    max-width: 120rem;
+    margin: 10rem auto;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1), -0.5rem -0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.price-component {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 90em) {
+  .price-component {
+    max-width: 55rem;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.box {
+  padding: 3rem 2rem;
+}
+
+.box1 {
+  background-color: hsl(204, 43%, 93%);
+}
+@media screen and (min-width: 90em) {
+  .box1 {
+    grid-column: 1/span 2;
+    grid-row: 1/2;
+  }
+}
+.box1 .heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(179, 63%, 43%);
+  margin-bottom: 2rem;
+}
+.box1 .guarantee {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: hsl(71, 73%, 54%);
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+.box1 .text {
+  color: #777;
+}
+
+.box2 {
+  background-color: hsl(179, 63%, 43%);
+  color: hsl(204, 43%, 93%);
+}
+.box2 .heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.box2 .price-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.box2 .price-box .price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.box2 .price-box span {
+  color: rgba(229, 239, 245, 0.5);
+}
+.box2 .text {
+  margin-bottom: 3rem;
+}
+.box2 .btn,
+.box2 .btn:link,
+.box2 .btn:active {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  background-color: hsl(71, 73%, 54%);
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.box3 {
+  background-color: rgba(41, 179, 176, 0.75);
+  color: rgba(229, 239, 245, 0.7);
+}
+.box3 .heading {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.box3 .list {
+  list-style: none;
+  line-height: 1.5;
+}
+
+/*# sourceMappingURL=style.css.map */

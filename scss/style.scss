@@ -1,0 +1,169 @@
+// VARIABLES
+$color-primary: hsl(179, 63%, 43%);
+$color-secondary: hsl(71, 73%, 54%);
+$color-light-gray: hsl(204, 43%, 93%);
+$color-dark-gray: hsl(218, 22%, 67%);
+
+// MIXINS
+@mixin laptop {
+  @media screen and (min-width: 90em) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 150em) {
+    @content;
+  }
+}
+
+// GENERAL STYLES
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include desktop() {
+    font-size: 85%;
+  }
+
+  @include laptop() {
+    font-size: 70%;
+  }
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: rgba($color-dark-gray, 0.3);
+  padding: 6rem 2.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include desktop() {
+    min-height: 80vh;
+    max-width: 120rem;
+    margin: 10rem auto;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1),
+      -0.5rem -0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+// PRICE COMPONENT STYLES
+.price-component {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  @include laptop() {
+    max-width: 55rem;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.box {
+  padding: 3rem 2rem;
+}
+
+.box1 {
+  background-color: $color-light-gray;
+
+  @include laptop() {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 2;
+  }
+
+  .heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: 2rem;
+  }
+
+  .guarantee {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-secondary;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+  }
+
+  .text {
+    color: #777;
+  }
+}
+
+.box2 {
+  background-color: $color-primary;
+  color: $color-light-gray;
+
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .price-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .price {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    span {
+      color: rgba($color-light-gray, 0.5);
+    }
+  }
+
+  .text {
+    margin-bottom: 3rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:active {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    background-color: $color-secondary;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+.box3 {
+  background-color: rgba($color-primary, 0.75);
+  color: rgba($color-light-gray, 0.7);
+
+  .heading {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .list {
+    list-style: none;
+    line-height: 1.5;
+  }
+}
